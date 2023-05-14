@@ -1,3 +1,4 @@
+#include "lists.h"
 /**
  * is_palindrome - chechks if the linked list is a plindrome or not
  * @head: head node of the linked list
