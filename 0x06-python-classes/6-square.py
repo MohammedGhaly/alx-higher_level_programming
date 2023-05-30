@@ -2,6 +2,7 @@
 """ Creates a class called Square
 """
 
+
 class Square:
     """
     Square class with size private attribute
@@ -45,7 +46,7 @@ class Square:
         return self.__size**2
 
     def my_print(self):
-         """
+        """
         Print a square with the character # at position given
         """
         if self.__size == 0:

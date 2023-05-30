@@ -3,6 +3,7 @@
 """ Creates an empty class  'Square'
 """
 
+
 class Square:
     """
     Square class with size private attribute

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ Creates an empty class Square
 """
+
+
 class Square:
     """ Empty class with size private attribute
     """

@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
-    """
-    Square class with size private attribute
-    """
+"""
+Square class with size private attribute
+"""
+
 
 class Square:
     """
@@ -12,7 +13,7 @@ class Square:
         """
         Instantiation with size
         Args:
-        size: size of the Square
+            size: size of the Square
         """
         if type(size) is not int:
             raise TypeError('size must be an integer')

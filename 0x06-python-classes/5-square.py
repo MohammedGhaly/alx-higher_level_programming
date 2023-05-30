@@ -2,6 +2,7 @@
 """ Creates a class called Square
 """
 
+
 class Square:
     """
     Square class with size private attribute
