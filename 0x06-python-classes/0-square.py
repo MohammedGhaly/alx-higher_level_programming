@@ -1,6 +1,10 @@
 #!/usr/bin/python3
+
+""" Creates an empty class 'Square'
+"""
+
 class Square:
     """
-    square class
+    Empty Square class
     """
     pass

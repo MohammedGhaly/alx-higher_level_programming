@@ -1,9 +1,18 @@
 #!/usr/bin/python3
+""" Creates a class called Square
+"""
+
 class Square:
     """
-    square class
+    Square class with size private attribute
     """
+
     def __init__(self, size=0, position=(0, 0)):
+        """
+        Instantiation with size
+        Args:
+        size: size of the Square
+        """
         if type(size) is not int:
             raise TypeError('size must be an integer')
         if size < 0:
@@ -13,10 +22,16 @@ class Square:
 
     @property
     def size(self):
+        """
+        size getter. returns the value of size property
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
+        """
+        size setter. Set the size square
+        """
         if type(value) is not int:
             raise TypeError('size must be an integer')
         if value < 0:
@@ -24,9 +39,15 @@ class Square:
         self.__size = value
 
     def area(self):
+        """
+        Returns the area of the square
+        """
         return self.__size**2
 
     def my_print(self):
+         """
+        Print a square with the character # at position given
+        """
         if self.__size == 0:
             print()
             return
@@ -38,10 +59,16 @@ class Square:
 
     @property
     def position(self):
+        """
+        position setter. Set the position of square
+        """
         return self.__position
 
     @position.setter
     def position(self, value):
+        """
+        Handle position setting with errors
+        """
         if type(value) != tuple or len(value) != 2:
             raise TypeError('position must be a tuple of 2 positive integers')
         elif (not isinstance(value[0], int)) or not isinstance(value[1], int):
