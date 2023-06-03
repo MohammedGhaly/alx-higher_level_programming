@@ -1,0 +1,97 @@
+module '0-add_integer'
+-----------------------
+
+using 'add_integer'
+
+-----------------------
+
+Importing function from the module:
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Adding 1 and 2:
+	>>> add_integer(1, 2)
+	3
+
+Adding 1.1 and 2.2:
+	>>> add_integer(1.1, 2.2)
+	3
+
+Adding character and integer:
+	>>> add_integer('h', 1)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Adding None and b default value :
+	>>> add_integer(None)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Adding 1 and b default value:
+	>>> add_integer(1)
+	99
+
+passing one argument for b:
+	>>> add_integer(b = 60)
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Adding 100 and -50:
+	>>> add_integer(100, -50)
+	50
+
+Adding integer and negative float:
+	>>> add_integer(100, -50.5)
+	50
+
+Adding  integer and string:
+	>>> add_integer(100, "alx")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+Adding 2 strings :
+	>>> add_integer("ghaly", "alx")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Adding  2 characters:
+	>>> add_integer('k', 'j')
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+passing tuple as the first number :
+	>>> add_integer((2, 5))
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Adding string and default value of b:
+	>>> add_integer('alx')
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Adding large numbers :
+	>>> add_integer(99999999999999, 999999999999999)
+	1099999999999998
+
+Adding  much larger numbers :
+	>>> add_integer(9999999999999999999999999, 999999999999999999999999999999)
+	1000009999999999999999999999998
+
+testing overflows:
+	>>> add_integer(float('inf'), 0)
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+passing nan:
+	>>> add_integer(float('nan'))
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
