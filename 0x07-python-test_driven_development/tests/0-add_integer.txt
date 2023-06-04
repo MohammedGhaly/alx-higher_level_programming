@@ -95,3 +95,17 @@ passing nan:
 	Traceback (most recent call last):
 		...
 	ValueError: cannot convert float NaN to integer
+
+passing Boolean values:
+	>>> add_integer(True, False)
+	1
+
+passing Boolean values:
+	>>> add_integer(True)
+	99
+
+passing a list:
+	>>> add_integer([1, 2, 3])
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
