@@ -57,5 +57,8 @@ class Rectangle:
 
     def __str__(self):
         """overrides the __str__ method"""
-        row = ('#' * self.width)
-        return ((row + '\n') * (self.height - 1)) + row
+        if self.width == 0 or self.height == 0:
+            return ''
+
+        rect = (('#' * self.width) + '\n') * self.height
+        return rect[:-1]
