@@ -6,16 +6,20 @@ module containing Rectangle class
 
 class Rectangle:
     """class that represents a Rectangle shape"""
+
     def __init__(self, width=0, height=0):
+        '''default init to initialize instances'''
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
+        '''a property to return the value of width'''
         return self.__width
 
     @property
     def height(self):
+        '''a property to return the value of height'''
         return self.__height
 
     @width.setter
