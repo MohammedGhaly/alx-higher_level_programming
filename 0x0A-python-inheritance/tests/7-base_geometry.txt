@@ -1,0 +1,46 @@
+module '7-base_geometry'
+-----------------------
+
+using 'BaseGeometry'
+
+-----------------------
+
+Importing function from the module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+creating object with invalid args:
+	>>> geo = BaseGeometry(7, 5)
+	Traceback (most recent call last):
+	  ...
+	TypeError: BaseGeometry() takes no arguments
+
+creating object:
+	>>> geo = BaseGeometry()
+
+printing dir of the object:
+	>>> dir(geo)
+	['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'area', 'integer_validator']
+
+running area() method:
+	>>> geo.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
+running area method with invalid args:
+	>>> geo.area(20)
+	Traceback (most recent call last):
+		...
+	TypeError: area() takes 1 positional argument but 2 were given
+
+running integer_validator method with invalid args:
+	>>> geo.integer_validator('distance', -5)
+	Traceback (most recent call last):
+		...
+	ValueError: distance must be greater than 0
+
+running integer_validator method with invalid args:
+	>>> geo.integer_validator('distance', '20')
+	Traceback (most recent call last):
+		...
+	TypeError: distance must be an integer
