@@ -4,7 +4,7 @@ contains lookup() fuunction
 '''
 
 
-def lookup(obj : object):
+def lookup(obj):
     '''
     returns the list of available attributes and methods of an object:
     '''

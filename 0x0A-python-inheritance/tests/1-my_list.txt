@@ -1,0 +1,51 @@
+module '1-my_list.py'
+-----------------------
+
+using 'print_sorted'
+
+-----------------------
+
+Importing function from the module:
+	>>> MyList = __import__('1-my_list').MyList
+
+printing sorted list of 5 elements
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+printing the list object after sorting
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+sorting a list of 1 element
+	>>> my_list = MyList()
+	>>> my_list.append(4)
+	>>> my_list.print_sorted()
+	[4]
+
+adding elements to the list using '+=' operator
+	>>> my_list = MyList()
+	>>> my_list += [1, 2, 3]
+	>>> print(my_list)
+	[1, 2, 3]
+
+sorting a sorted list
+	>>> my_list.print_sorted()
+	[1, 2, 3]
+
+checking type of print_sorted
+	>>> type(my_list.print_sorted())
+	[1, 2, 3]
+	<class 'NoneType'>
+
+Print_sorted method with 2 passed arguments
+	>>> my_list = MyList()
+	>>> my_list.print_sorted([1, 2], [5, 4])
+	Traceback (most recent call last):
+	      ...
+	TypeError: print_sorted() takes 1 positional argument but 3 were given
