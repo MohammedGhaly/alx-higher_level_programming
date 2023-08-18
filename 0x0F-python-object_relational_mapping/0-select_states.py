@@ -1,20 +1,28 @@
 #!/usr/bin/python3
-'''a script that lists all states from the database (hbtn_0e_0_usa)'''
+"""Module for State class"""
 
-from sys import argv
 import MySQLdb
+import sys
 
 if __name__ == '__main__':
-    db = MySQLdb.connect(user=argv[1],
-                         passwd=argv[2],
-                         database=argv[3],
-                         port=3306,
-                         host='localhost')
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
-    data = cur.fetchall()
-    for row in data:
-        print(row)
+    """Function main"""
+    args = sys.argv
+    db = MySQLdb.connect(
+        host='localhost',
+        port=3306,
+        user=args[1],
+        password=args[2],
+        database=args[3]
+    )
 
-    cur.close()
+    cursor = db.cursor()
+
+    query = 'SELECT * FROM states ORDER BY states.id'
+
+    cursor.execute(query)
+
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+    cursor.close()
     db.close()
