@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-'''a script that lists all states from the database (hbtn_0e_0_usa)'''
+'''
+    a script that lists all cities from the database hbtn_0e_4_usa
+'''
 
 import sys
 import MySQLdb
@@ -11,7 +13,10 @@ if __name__ == '__main__':
                          port=3306,
                          host='localhost')
     cur = db.cursor()
-    cur.execute('SELECT * FROM states ORDER BY id ASC')
+    cur.execute("""SELECT c.id, c.name, s.name AS state
+                   FROM cities c
+                   JOIN states s
+                   ON s.id = c.state_id""")
     for row in cur.fetchall():
         print(row)
 
