@@ -14,9 +14,9 @@ if __name__ == '__main__':
                          port=3306,
                          host='localhost')
     cur = db.cursor()
-    cur.execute("""SELECT * FROM states
-                WHERE name = %s
-                ORDER BY id ASC""", (sys.argv[4],))
+    cur.execute(""" SELECT * FROM states
+                WHERE name LIKE BINARY '{}'
+                ORDER BY id ASC """.format(sys.argv[4]))
     for row in cur.fetchall():
         print(row)
 
