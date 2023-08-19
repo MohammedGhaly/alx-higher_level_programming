@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-    this module contains Base field and State class
+    this module contains a Base field and a State class
 """
 
 from sqlalchemy.ext.declarative import declarative_base
@@ -9,12 +9,13 @@ from sqlalchemy import Column
 from sqlalchemy import String
 from sqlalchemy import Integer
 
-Base = declerative_base()
+
+Base = declarative_base()
 
 
 class State(Base):
     """
-        State class , inherits the from Base class
+        State class inherits the Base class
         Attributes:
             id (int)
             name (string)
