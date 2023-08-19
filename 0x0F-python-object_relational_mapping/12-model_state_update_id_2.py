@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    a script that adds the State object “Louisiana”
+    a script that changes the name of a State object
 """
 
 
@@ -17,11 +17,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = State(name='Louisiana')
-    session.add(state)
-    obj = session.query(State).filter_by(name='Louisiana') \
-                              .first()
-
-    print(f'{obj.id}')
+    obj = session.query(State).filter_by(id=2).first()
+    if obj is not None:
+        obj.name = 'New Mexico'
+        session.commit()
 
     session.close()
