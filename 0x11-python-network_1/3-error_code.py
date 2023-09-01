@@ -6,6 +6,7 @@
 
 
 import urllib.request as uq
+import urllib.error
 import urllib.parse as up
 import sys
 
