@@ -7,7 +7,6 @@
 
 import urllib.request as uq
 import urllib.parse as up
-import urllib.error
 import sys
 
 if __name__ == '__main__':
