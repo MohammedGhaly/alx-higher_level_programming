@@ -10,11 +10,12 @@ import urllib.parse as up
 import sys
 
 
-url, email = (sys.argv[1], sys.argv[2])
-data = {'email': email}
-data = up.urlencode(data)
-data = data.encode('ascii')
+if __name__ == "__main__":
+    url, email = (sys.argv[1], sys.argv[2])
+    data = {'email': email}
+    data = up.urlencode(data)
+    data = data.encode('ascii')
 
-req = uq.Request(url, data)
-with uq.urlopen(req) as res:
-    print(res.read().decode('utf8'))
+    req = uq.Request(url, data)
+    with uq.urlopen(req) as res:
+        print(res.read().decode('utf8'))
