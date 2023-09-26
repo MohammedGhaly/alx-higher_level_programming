@@ -4,8 +4,7 @@ const args = process.argv;
 const URL = args[2];
 request(URL, function (err, res, body) {
   if (err) {
-    console.log(err);
-    return;
+    return console.log(err);
   }
   let n = 0;
   const results = JSON.parse(res.body).results;
