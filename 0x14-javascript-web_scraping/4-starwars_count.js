@@ -9,7 +9,10 @@ request(URL, function (err, res, body) {
   let n = 0;
   const results = JSON.parse(res.body).results;
   results.forEach(element => {
-    if (element.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
+    const condition = element.characters.find((ch) => {
+      return ch.match(/18/);
+    });
+    if (condition !== undefined) {
       n++;
     }
   });
